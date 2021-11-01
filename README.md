@@ -26,6 +26,16 @@ Desenvolvi esta SDK com o intuito de facilitar o meu desenvolvimento em relaçã
 - A categoria irá definir onde visualmente seu plugin estará antes de ser colocado no projeto, defina na [*linha 10 da edittime.js*](/SDK_Exemplo/edittime.js#L10).
 - O tipo de plugin poderá ser **object** *(apenas código)* ou **world** *(plugin visual/gráfico)* na [*linha 11 da edittime.js*](/SDK_Exemplo/edittime.js#L11)
 - A opção [*rotatable na linha 12 da edittime.js*](/SDK_Exemplo/edittime.js#L12) só deve ser ativa, caso o plugin possua edição de rotação na engine.
+```js
+'name':			'Nome visual do plugin',
+'id':			'NomeInternoNaRuntime',
+'version':		'0.1',
+'description':		'Descrição do que o plugin faz.',
+'author':		'DeehLeh',
+'help url':		'https://deehleh.itch.io',
+'category':		'DeehLeh',
+'type':			'object',
+``` 
 
 ### Ativando os ticks do plugin:
 - Descomente o metodo tick na [*linha 73 na runtime.js*](/SDK_Exemplo/runtime.js#L73) ou crie-o na class  **Instance**.
