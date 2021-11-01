@@ -25,7 +25,7 @@ Desenvolvi esta SDK com o intuito de facilitar o meu desenvolvimento em relaçã
 - Defina uma descrição na [*linha 7 da edittime.js*](/SDK_Exemplo/edittime.js#L7) para ser exibida ao inserir o plugin.
 - A categoria irá definir onde visualmente seu plugin estará antes de ser colocado no projeto, defina na [*linha 10 da edittime.js*](/SDK_Exemplo/edittime.js#L10).
 - O tipo de plugin poderá ser **object** *(apenas código)* ou **world** *(plugin visual/gráfico)* na [*linha 11 da edittime.js*](/SDK_Exemplo/edittime.js#L11)
-- A opção [*rotatable na linha 12*](/SDK_Exemplo/edittime.js#L12) só deve ser ativa, caso o plugin possua edição de rotação na engine.
+- A opção [*rotatable na linha 12 da edittime.js*](/SDK_Exemplo/edittime.js#L12) só deve ser ativa, caso o plugin possua edição de rotação na engine.
 
 ### Ativando os ticks do plugin:
 - Descomente o metodo tick na [*linha 73 na runtime.js*](/SDK_Exemplo/runtime.js#L73) ou crie-o na class  **Instance**.
@@ -43,7 +43,7 @@ Ententendo oque são Trigger's:
 > Os trigger são condições que serão ativas por alguma função/metodo ou até mesmo ações, como no caso deste exemplo.
 - Na [*linha 66 da edittime.js*](/SDK_Exemplo/edittime.js#L66) esta configurada a ação que chamará o trigger.
 - Já na [*linha 91 da edittime.js*](/SDK_Exemplo/edittime.js#L91) es encontra a condição que será acionada, note que a flag usada se chama **cf_trigger**.
-- A ação de ativar o triger é feito na [*linha 133 da runtime.js*](/SDK_Exemplo/runtime.js#L133) chamado a condição **exampleTrigger()** na [*linha 159 da runtime*](/SDK_Exemplo/runtime.js#L159)
+- A ação de ativar o triger é feito na [*linha 133 da runtime.js*](/SDK_Exemplo/runtime.js#L133) chamado a condição **exampleTrigger()** na [*linha 159 da runtime.js*](/SDK_Exemplo/runtime.js#L159)
 
 Manipulação de loop:
 > A manipulação de loop ocorre em toda ACE, ação, condição e expressão.
