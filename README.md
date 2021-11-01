@@ -51,4 +51,4 @@ Manipulação de loop:
 A condição irá pegar uma quantia de vezes que deverá acionar as ações no mesmo tick.
 - Esta quantia para este exemplo pode ser visivel na [*linha 98 da edittime.js*](/SDK_Exemplo/edittime.js#L98)
 - A condição em si, esta localizada na [*linha 99 da edittime.js*](/SDK_Exemplo/edittime.js#L99). note que a flag usada se chama **cf_looping**.
-- Agora na [*linha x da runtime.js*](/SDK_Exemplo/runtime.js#L193) se encontra toda a estrutura do loop com pausas de eventos e comentarios.
+- Agora na [*linha 193 da runtime.js*](/SDK_Exemplo/runtime.js#L193) se encontra toda a estrutura do loop com pausas de eventos e comentarios.
