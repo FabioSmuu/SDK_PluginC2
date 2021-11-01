@@ -62,3 +62,5 @@ Por último temos a expressão que retorna em qual index o loop se encontra.
 - Seu metodo, também simples, se encontra na [*linha 274 da runtime.js*](/SDK_Exemplo/runtime.js#L274), deixando claro que qualquer expressão deve retornar dentro da função **ret**, que é um parâmetro obrigatório em todas as expressões.
 
 Outros exemplos você pode observar dentro na pasta [*SDK_Exemplo*](/SDK_Exemplo)
+
+**Obrigado pela sua atenção!**
