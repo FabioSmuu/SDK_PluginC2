@@ -56,3 +56,7 @@ A condição irá pegar uma quantia de vezes que deverá acionar as ações no m
 A ação da qual um loop precisa é a de para-lo, pois, nem sempre queremos um loop que percorra até o final.
 - Na [*linha 68 da edititime.js*](/SDK_Exemplo/edittime.js#L68) se encontra a ação de parar o loop independente de seu tick.
 - Já seu metodo se encontra na [*linha 137 da runtime.js*](/SDK_Exemplo/runtime.js#L137), sem nenhum mistério ou novidade.
+
+Por último temos a expressão que retorna em qual index o loop se encontra.
+- Sem nenhum parâmetro ou flags próprias a expressão se encontra na [*linha 125 da edittime.js*](/SDK_Exemplo/edittime.js#L125)
+- Seu metodo, também simples, se encontra na [*linha 274 da runtime.js*]()/SDK_Exemplo/runtime.js#L274, deixando claro que qualquer expressão deve retornar dentro da função **ret**, que é um parâmetro obrigatório em todas as expressões.
