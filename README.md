@@ -49,5 +49,6 @@ Manipulação de loop:
 > A manipulação de loop ocorre em toda ACE, ação, condição e expressão.
 
 A condição irá pegar uma quantia de vezes que deverá acionar as ações no mesmo tick.
-- Esta quantia para este exemplo pode ser visivel na [*linha 98 da runtime.js*](/SDK_Exemplo/edittime.js#L98)
-- A condição em si, esta localizada na [*linha 99 da runtime.js*](/SDK_Exemplo/edittime.js#L99). note que a flag usada se chama **cf_looping**.
+- Esta quantia para este exemplo pode ser visivel na [*linha 98 da edittime.js*](/SDK_Exemplo/edittime.js#L98)
+- A condição em si, esta localizada na [*linha 99 da edittime.js*](/SDK_Exemplo/edittime.js#L99). note que a flag usada se chama **cf_looping**.
+- 
