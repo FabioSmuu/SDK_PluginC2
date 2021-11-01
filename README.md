@@ -53,6 +53,6 @@ A condição irá pegar uma quantia de vezes que deverá acionar as ações no m
 - A condição em si, esta localizada na [*linha 99 da edittime.js*](/SDK_Exemplo/edittime.js#L99). note que a flag usada se chama **cf_looping**.
 - Agora na [*linha 193 da runtime.js*](/SDK_Exemplo/runtime.js#L193) se encontra toda a estrutura do loop com pausas de eventos e comentarios.
 
-A ação da qual um loop precisa é a de para-lo, pois nem sempre queremos um loop que percorra até o final.
+A ação da qual um loop precisa é a de para-lo, pois, nem sempre queremos um loop que percorra até o final.
 - Na [*linha 68 da edititime.js*](/SDK_Exemplo/edittime.js#L68) se encontra a ação de parar o loop independente de seu tick.
 - Já seu metodo se encontra na [*linha 137 da runtime.js*](/SDK_Exemplo/runtime.js#L137), sem nenhum mistério ou novidade.
