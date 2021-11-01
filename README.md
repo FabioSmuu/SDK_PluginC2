@@ -4,6 +4,12 @@
 
 Desenvolvi esta SDK com o intuito de facilitar o meu desenvolvimento em relação a plugin e como quase que diariamente me perguntam como desenvolvo, resolvi deixar uma base atualizada com algumas explicações, para que ajude estas pessoas a iniciar um addon próprio.
 
+### Informações básicas:
+- Todo os metodos dos plugin tanto na [*edittime.js*](/SDK_Exemplo/edittime.js) quanto na [*runtime.js*](/SDK_Exemplo/runtime.js) estão repletos de comentarios.
+- A *runtime.js* foi rescrita usando classes, apenas para que suas prototypes funcionem como uma instância única.
+- Cuidado ao desenvolver um plugin direto no construct, pois, qualquer erro bobo pode corromper sua engine.
+- Os arquivos de exemplos contem algumas ACEs exatamente, por exemplo, então use a [*SDK_Limpa*](/SDK_Limpa) em seus projetos.
+
 ### Como configurar um behavior:
 > Embora esta SDK seja para desenvolver plugin, se torna possível desenvolver behaviors seguindo estes passos.
 - No arquivo [*edittime.js*](/SDK_Exemplo/edittime.js#L2), Altere **GetPluginSettings** por **GetBehaviorSettings**.
@@ -20,3 +26,10 @@ Desenvolvi esta SDK com o intuito de facilitar o meu desenvolvimento em relaçã
 - A categoria irá definir onde visualmente seu plugin estará antes de ser colocado no projeto, defina na [*linha 10 da edittime.js*](/SDK_Exemplo/edittime.js#L10).
 - O tipo de plugin poderá ser **object** *(apenas código)* ou **world** *(plugin visual/gráfico)* na [*linha 11 da edittime.js*](/SDK_Exemplo/edittime.js#L11)
 - A opção [*rotatable na linha 12*](/SDK_Exemplo/edittime.js#L12) só deve ser ativa, caso o plugin possua edição de rotação na engine.
+
+### Ativando os ticks do plugin:
+- Descomente o metodo tick na [*linha 73 na runtime.js*](/SDK_Exemplo/runtime.js#L73) ou crie-o na class  **Instance**.
+- Para ativar o tick, você deve descomentar a [*linha 92 na runtime.js*](/SDK_Exemplo/runtime.js#L92) ou inserir a seguinte linha no metodo **OnCreate** da class **Instance**:
+```js
+this.runtime.tickMe(this)
+``` 
