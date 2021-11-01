@@ -40,7 +40,7 @@ Emitir um alert:
 - A ação de alert se encontra na [*linha 64 da edittime.js*](/SDK_Exemplo/edittime.js#L64) e seu metodo na [*linha 128 da runtime.js*](/SDK_Exemplo/runtime.js#L128)
 
 Ententendo oque são Trigger's:
-> Os trigger são condições que serão ativas por alguma função/metodos ou até mesmo ações, como no caso deste exemplo.
+> Os trigger são condições que serão ativas por alguma função/metodo ou até mesmo ações, como no caso deste exemplo.
 - Na [*linha 66 da edittime.js*](/SDK_Exemplo/edittime.js#L66) esta configurada a ação que chamará o trigger.
 - Já na [*linha 91 da edittime.js*](/SDK_Exemplo/edittime.js#L91) es encontra a condição que será acionada, note que a flag usada se chama **cf_trigger**.
 - A ação de ativar o triger é feito na [*linha 133 da runtime.js*](/SDK_Exemplo/runtime.js#L133) chamado a condição **exampleTrigger()** na [*linha 159 da runtime*](/SDK_Exemplo/runtime.js#L159)
