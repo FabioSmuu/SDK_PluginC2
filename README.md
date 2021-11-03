@@ -18,7 +18,7 @@ Desenvolvi esta SDK com o intuito de facilitar o meu desenvolvimento em relaçã
 - Altere **cr.plugins_** para **cr.behaviors** nas linhas [**33**](/SDK_Exemplo/runtime.js#L33) e [**43**](/SDK_Exemplo/runtime.js#L43).
 - Na [*linha 148 da edittime.js*](/SDK_Exemplo/edittime.js#L148) altere **CreateIDEObjectType** para **CreateIDEBehaviorType**.
 - Agora na *runtime.js*, subititua todas as palavras *plugin* por *behavior*.
-- Procure pela class **Instance** e adicione o metodo **tick()**.
+- Procure pela class **Instance** e adicione o metodo **tick()** (um exemplo comentadno na [*linha 73 da runtime.js*](/SDK_Exemplo/runtime.js#L73)).
 - E por fim altere **IDEObjectType** por **IDEBehaviorType** na [*linha 149*](/SDK_Exemplo/edittime.js#L149) e [*152 da edittime.js*](/SDK_Exemplo/edittime.js#L152)
 
 ### Primeiros passos:
