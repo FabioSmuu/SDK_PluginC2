@@ -62,6 +62,9 @@
 		}
 	}
 
+	//Exemplo do uso de promises            
+	const examplePromise = new Promise((resolve, reject) => resolve('example!!!'))
+
 	class Instance {
 		constructor(type) {
 			this.type = type
@@ -82,12 +85,16 @@
 		getImagePointIndexByName(name) {}
 		getImagePoint(imgpt, getX) {}
 */
-		onCreate() {
+		async onCreate() {
 			//Criar a propriedades numero de exemplo.
 			//this.numeroExemplo = this.properties[0]
 
 			//crie variaveis internas aqui.
 			this.exemplo = {a:'b'}
+
+			//Exemplo do uso de promises    
+			const promise = await examplePromise
+			console.log(promise)
 
 			//this.runtime.tickMe(this) //ative para usar o metodo tick()
 		}
