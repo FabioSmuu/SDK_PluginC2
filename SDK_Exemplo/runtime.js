@@ -151,6 +151,10 @@
 			this.numeroExemplo = number
 		},
 
+		exemploFile(Message){
+			TesteAlerta(Message)
+		},
+
 /*
 		exampleName(parametros, parametros, parametros, ...parametros) {
 			//Qualquer ação, condição ou expressão pode usar este codigo, mas achei viavel colocar em ações.

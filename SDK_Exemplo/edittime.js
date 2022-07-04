@@ -10,7 +10,7 @@ function GetPluginSettings() {
 		'category':		'DeehLeh',
 		'type':			'object', //world(Plugin grafico, não suportado por behavior) ou object(Plugin interno ou behaviors)
 		//'rotatable':	true,
-		'flags':		0 // | pf_singleglobal | pf_zorder_aces
+		'flags':		0, // | pf_singleglobal | pf_zorder_aces
 		//	| pf_singleglobal		// Torna global para todo o projeto, des de mouses a teclados, mas use type: 'object'
 		//	| pf_texture			// Texturização em tiles.
 		//	| pf_position_aces		// Padrões de posições X e Y do plugin.
@@ -23,6 +23,7 @@ function GetPluginSettings() {
 		//  | pf_nosize				// Evita redimencionamento na engine.
 		//	| pf_effects			// Compatibilidade efeitos WebGL.
 		//  | pf_predraw			// Permite desenhar em canvas sem ser uma sprite.
+		'dependency': 'EventsFunction.js;' // Todas as dependências que seu plugin possa ter, se for mais de 1, separar com ";".
 	}
 }
 
@@ -69,6 +70,9 @@ AddAction(2, af_none, 'Parar loop', 'Extra', 'Para o loop', 'Pare o loop no meio
 
 AddNumberParam('Novo valor', 'Escolha um novo valor para a propriedade "Numero de exemplo"', 7)	
 AddAction(3, af_none, 'Mudar valor da prorpiedade', 'Exemplo de prorpiedade', '<i>"Numero de exemplo"</i> = <b>{0}</b>', 'Exemplo de como mudar o valor de uma propriedade usando ação.', 'sertNumberExample')
+
+AddAnyTypeParam('Mensagem', 'Escreva alguma mensagem para teste.', '"Mensagem de exemplo!"')
+AddAction(4, af_none, 'Emitir um alert de arquivo Externo', 'Exemplo File', 'Alert({0})', 'Esta ação chamará um alert de um arquivo externo da runtime', 'exemploFile')
 
 ////////////////////////////////////////
 // Conditions
