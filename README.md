@@ -9,6 +9,7 @@ Desenvolvi esta SDK com o intuito de facilitar o meu desenvolvimento em relaçã
 - A *runtime.js* foi rescrita usando classes, apenas para que suas prototypes funcionem como uma instância única.
 - Cuidado ao desenvolver um plugin direto no construct, pois, qualquer erro bobo pode corromper sua engine.
 - Os arquivos de exemplos contem algumas ACEs exatamente, por exemplo, então use a [*SDK_Limpa*](/SDK_Limpa) em seus projetos.
+- Você pode se aventurar tanto com uma SDK Limpa de [*Plugin*](/SDK_Limpa/Plugin) ou [*Behavior*](/SDK_Limpa/Behavior).
 
 ### Como configurar um behavior:
 > Embora esta SDK seja para desenvolver plugin, se torna possível desenvolver behaviors seguindo estes passos.
@@ -18,7 +19,7 @@ Desenvolvi esta SDK com o intuito de facilitar o meu desenvolvimento em relaçã
 - Na [*linha 148 da edittime.js*](/SDK_Exemplo/edittime.js#L148) altere **CreateIDEObjectType** para **CreateIDEBehaviorType**.
 - Finalizando a edittime, altere **IDEObjectType** por **IDEBehaviorType** na [*linha 149*](/SDK_Exemplo/edittime.js#L149) e [*152 da edittime.js*](/SDK_Exemplo/edittime.js#L152)
 
-- A edição na runtime será trocar de **cr.plugins_** para **cr.behaviors** nas linhas [**33**](/SDK_Exemplo/runtime.js#L33) e [**43**](/SDK_Exemplo/runtime.js#L43).
+- A edição na runtime será trocar de **cr.plugins_** para **cr.behaviors** nas linhas [**33**](/SDK_Exemplo/runtime.js#L33) e [**45**](/SDK_Exemplo/runtime.js#L45).
 - Busque na runtime qualquer referência com a palavra plugin e a substitua por behavior.
 - Edite a class **type**, colocando o parametro o **objtype** na constructor e tribundo a this:
 ```js
@@ -70,8 +71,8 @@ class Instance {
 ``` 
 
 ### Ativando os ticks do plugin:
-- Descomente o metodo tick na [*linha 73 na runtime.js*](/SDK_Exemplo/runtime.js#L73) ou crie-o na class  **Instance**.
-- Para ativar o tick, você deve descomentar a [*linha 92 na runtime.js*](/SDK_Exemplo/runtime.js#L92) ou inserir a seguinte linha no metodo **OnCreate** da class **Instance**:
+- Descomente o metodo tick na [*linha 75 na runtime.js*](/SDK_Exemplo/runtime.js#L75) ou crie-o na class  **Instance**.
+- Para ativar o tick, você deve descomentar a [*linha 94 na runtime.js*](/SDK_Exemplo/runtime.js#L94) ou inserir a seguinte linha no metodo **OnCreate** da class **Instance**:
 ```js
 this.runtime.tickMe(this)
 ``` 
@@ -79,13 +80,13 @@ this.runtime.tickMe(this)
 ### Exemplos para fins didatísticos:
 Emitir um alert:
 - Esta ação usa o parametro da [*linha 63 da edittime.js*](/SDK_Exemplo/edittime.js#L64) como argumento em um alert.
-- A ação de alert se encontra na [*linha 64 da edittime.js*](/SDK_Exemplo/edittime.js#L64) e seu metodo na [*linha 128 da runtime.js*](/SDK_Exemplo/runtime.js#L128)
+- A ação de alert se encontra na [*linha 64 da edittime.js*](/SDK_Exemplo/edittime.js#L64) e seu metodo na [*linha 130 da runtime.js*](/SDK_Exemplo/runtime.js#L130)
 
 Ententendo oque são Trigger's:
 > Os trigger são condições que serão ativas por alguma função/metodo ou até mesmo ações, como no caso deste exemplo.
 - Na [*linha 66 da edittime.js*](/SDK_Exemplo/edittime.js#L66) esta configurada a ação que chamará o trigger.
 - Já na [*linha 91 da edittime.js*](/SDK_Exemplo/edittime.js#L91) es encontra a condição que será acionada, note que a flag usada se chama **cf_trigger**.
-- A ação de ativar o triger é feito na [*linha 133 da runtime.js*](/SDK_Exemplo/runtime.js#L133) chamado a condição **exampleTrigger()** na [*linha 159 da runtime.js*](/SDK_Exemplo/runtime.js#L159)
+- A ação de ativar o triger é feito na [*linha 135 da runtime.js*](/SDK_Exemplo/runtime.js#L135) chamado a condição **exampleTrigger()** na [*linha 161 da runtime.js*](/SDK_Exemplo/runtime.js#L161)
 
 Manipulação de loop:
 > A manipulação de loop ocorre em toda ACE, ação, condição e expressão.
@@ -93,15 +94,15 @@ Manipulação de loop:
 A condição irá pegar uma quantia de vezes que deverá acionar as ações no mesmo tick.
 - Esta quantia para este exemplo pode ser visivel na [*linha 98 da edittime.js*](/SDK_Exemplo/edittime.js#L98)
 - A condição em si, esta localizada na [*linha 99 da edittime.js*](/SDK_Exemplo/edittime.js#L99). note que a flag usada se chama **cf_looping**.
-- Agora na [*linha 193 da runtime.js*](/SDK_Exemplo/runtime.js#L193) se encontra toda a estrutura do loop com pausas de eventos e comentarios.
+- Agora na [*linha 195 da runtime.js*](/SDK_Exemplo/runtime.js#L195) se encontra toda a estrutura do loop com pausas de eventos e comentarios.
 
 A ação da qual um loop precisa é a de para-lo, pois, nem sempre queremos um loop que percorra até o final.
 - Na [*linha 68 da edititime.js*](/SDK_Exemplo/edittime.js#L68) se encontra a ação de parar o loop independente de seu tick.
-- Já seu metodo se encontra na [*linha 137 da runtime.js*](/SDK_Exemplo/runtime.js#L137), sem nenhum mistério ou novidade.
+- Já seu metodo se encontra na [*linha 139 da runtime.js*](/SDK_Exemplo/runtime.js#L139), sem nenhum mistério ou novidade.
 
 Por último temos a expressão que retorna em qual index o loop se encontra.
 - Sem nenhum parâmetro ou flags próprias a expressão se encontra na [*linha 125 da edittime.js*](/SDK_Exemplo/edittime.js#L125)
-- Seu metodo, também simples, se encontra na [*linha 274 da runtime.js*](/SDK_Exemplo/runtime.js#L274), deixando claro que qualquer expressão deve retornar dentro da função **ret**, que é um parâmetro obrigatório em todas as expressões.
+- Seu metodo, também simples, se encontra na [*linha 276 da runtime.js*](/SDK_Exemplo/runtime.js#L276), deixando claro que qualquer expressão deve retornar dentro da função **ret**, que é um parâmetro obrigatório em todas as expressões.
 
 Outros exemplos você pode observar dentro na pasta [*SDK_Exemplo*](/SDK_Exemplo)
 

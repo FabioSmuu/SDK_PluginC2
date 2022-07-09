@@ -37,6 +37,8 @@
 	class plugin {
 		constructor(runtime) {
 			this.runtime = runtime
+			this.Type = Type
+			this.Instance = Instance
 		}
 	}
 
@@ -62,7 +64,7 @@
 		}
 	}
 
-	//Exemplo do uso de promises            
+	//Exemplo do uso de promises proposto por https://github.com/DutraGames
 	const examplePromise = new Promise((resolve, reject) => resolve('example!!!'))
 
 	class Instance {
@@ -131,42 +133,42 @@
 
 	//////////////////////////////////////
 	// Actions
-	const Actions = {
+	class Actions {
 		alertEmit(mensage) {
 			alert(mensage)
-		},
+		}
 
 		activateTrigger() {
 			this.runtime.trigger(Conditions.exampleTrigger, this)
 			console.log('A condição "exampleTrigger" foi ativada.')
-		},
+		}
 
 		loopStop() {
 			//Criei esta variavel apenas para parar o loop.
 			this.stoopLoop = true
-		},
+		}
 
 		sertNumberExample(number) {
 			//Muda o valor da variavel que representa a propriedade "Numero de exemplo"
 			this.numeroExemplo = number
-		},
+		}
 
 /*
 		exampleName(parametros, parametros, parametros, ...parametros) {
 			//Qualquer ação, condição ou expressão pode usar este codigo, mas achei viavel colocar em ações.
 			//Ative uma condição que tenha a flag cf_trigger na edittime, apenas inserindo o nome interno.
 			this.runtime.trigger(Conditions.cndsExampleName, this)
-		},
+		}
 */
 	}
 
 	//////////////////////////////////////
 	// Conditions
-	const Conditions = {
+	class Conditions {
 		exampleTrigger() {
 			console.log('Condição ativada!')
 			return true
-		},
+		}
 
 		ObjectTest(object) {
 			//Manipula objeto por instancia.
@@ -191,11 +193,11 @@
 
 			//Apenas o retorno se o objeto foi encontrado ou não.
 			return boolean
-		},
+		}
 
 		compareValues(primeiroNumero, cmp, segundoNumero) {
 			return cr.do_cmp(primeiroNumero, cmp, segundoNumero)	
-		},
+		}
 
 		loopExample(count) {
 			//Esta variavel poderia ser criada na onCreate da class Instance, mas criei aqui para exemplo.
@@ -231,12 +233,12 @@
 				//Atribui +1 ao valor da variavel.
 				this.loopCount = value+1
 			})
-		},
+		}
 
 		cmpNumberExample(number) {
 			//Compara se o valor da variavel que representa a propriedade "Numero de exemplo"
 			return !!this.numeroExemplo%number
-		},
+		}
 
 /*
 		exampleName(parametros, parametros, parametros, ...parametros) {
@@ -253,21 +255,21 @@
 			return true
 
 			//Uma condição que possua a flag cf_trigger na edittime, sempre deve retornar true, mas não é regra.
-		},
+		}
 */
 	}
 
 	//////////////////////////////////////
 	// Expressions
-	const Expressions = {
+	class Expressions {
 		randomNumber() {
 			const number = Math.floor(Math.random())
 			ret.set_int(number)
-		},
+		}
 
 		getExample(ret) {
 			ret.set_any(JSON.stringify(this.exemplo.a))
-		},
+		}
 
 		somar(ret, ...numeros) {
 			console.log(numeros)
@@ -276,12 +278,12 @@
 			const resultado = numeros.reduce(calculo)
 
 			ret.set_float(resultado)
-		},
+		}
 
 		getLoopCount(ret) {
 			//Retorna a variavel loopCount criada na condição loopExample.
 			ret.set_int(this.loopCount || 0)
-		},
+		}
 
 		getNumeberExample(ret) {
 			//Retorna o valor da variavel que representa a propriedade "Numero de exemplo".
@@ -297,9 +299,13 @@
 			ret.set_float(0.7) //numero separados por pontos
 			ret.set_string('Texto') //texto
 			ret.set_any('Numero ou Texto') //qualquer valor
-		},
+		}
 */
 	}
 
-	Object.setPrototypeOf(plugin.prototype, { Type, Instance, acts: Actions, cnds: Conditions, exps: Expressions })
+	Object.setPrototypeOf(plugin.prototype, {
+		acts: new Actions,
+		cnds: new Conditions,
+		exps: new Expressions
+	})
 }())
