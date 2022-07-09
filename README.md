@@ -104,6 +104,14 @@ Por último temos a expressão que retorna em qual index o loop se encontra.
 - Sem nenhum parâmetro ou flags próprias a expressão se encontra na [*linha 125 da edittime.js*](/SDK_Exemplo/edittime.js#L125)
 - Seu metodo, também simples, se encontra na [*linha 283 da runtime.js*](/SDK_Exemplo/runtime.js#L283), deixando claro que qualquer expressão deve retornar dentro da função **ret**, que é um parâmetro obrigatório em todas as expressões.
 
+Manipular objetos:
+> A manipulação de objetos ocorre apos a detecção do sol, então é separado um array de instancia para o objeto selecionado.
+
+- Teremos 2 parametros na [*linha 74 da edittime.js*](/SDK_Exemplo/edittime.js#L74), objeto e angulo.
+- A ação de mudança do angulo se encontra na [*linha 75 da edittime.js*](/SDK_Exemplo/edittime.js#L75) e seu metodo na [*linha 293 da runtime.js*](/SDK_Exemplo/runtime.js#L293).
+
+
+
 Outros exemplos você pode observar dentro na pasta [*SDK_Exemplo*](/SDK_Exemplo)
 
 **Obrigado pela sua atenção!**
