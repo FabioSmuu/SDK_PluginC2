@@ -71,8 +71,8 @@ class Instance {
 ``` 
 
 ### Ativando os ticks do plugin:
-- Descomente o metodo tick na [*linha 75 na runtime.js*](/SDK_Exemplo/runtime.js#L75) ou crie-o na class  **Instance**.
-- Para ativar o tick, você deve descomentar a [*linha 94 na runtime.js*](/SDK_Exemplo/runtime.js#L94) ou inserir a seguinte linha no metodo **OnCreate** da class **Instance**:
+- Descomente o metodo tick na [*linha 78 na runtime.js*](/SDK_Exemplo/runtime.js#L78) ou crie-o na class  **Instance**.
+- Para ativar o tick, você deve descomentar a [*linha 101 na runtime.js*](/SDK_Exemplo/runtime.js#L101) ou inserir a seguinte linha no metodo **OnCreate** da class **Instance**:
 ```js
 this.runtime.tickMe(this)
 ``` 
@@ -80,13 +80,13 @@ this.runtime.tickMe(this)
 ### Exemplos para fins didatísticos:
 Emitir um alert:
 - Esta ação usa o parametro da [*linha 63 da edittime.js*](/SDK_Exemplo/edittime.js#L64) como argumento em um alert.
-- A ação de alert se encontra na [*linha 64 da edittime.js*](/SDK_Exemplo/edittime.js#L64) e seu metodo na [*linha 130 da runtime.js*](/SDK_Exemplo/runtime.js#L130)
+- A ação de alert se encontra na [*linha 64 da edittime.js*](/SDK_Exemplo/edittime.js#L64) e seu metodo na [*linha 137 da runtime.js*](/SDK_Exemplo/runtime.js#L137)
 
 Ententendo oque são Trigger's:
 > Os trigger são condições que serão ativas por alguma função/metodo ou até mesmo ações, como no caso deste exemplo.
 - Na [*linha 66 da edittime.js*](/SDK_Exemplo/edittime.js#L66) esta configurada a ação que chamará o trigger.
 - Já na [*linha 91 da edittime.js*](/SDK_Exemplo/edittime.js#L91) es encontra a condição que será acionada, note que a flag usada se chama **cf_trigger**.
-- A ação de ativar o triger é feito na [*linha 135 da runtime.js*](/SDK_Exemplo/runtime.js#L135) chamado a condição **exampleTrigger()** na [*linha 161 da runtime.js*](/SDK_Exemplo/runtime.js#L161)
+- A ação de ativar o triger é feito na [*linha 141 da runtime.js*](/SDK_Exemplo/runtime.js#L141) chamado a condição **exampleTrigger()** na [*linha 168 da runtime.js*](/SDK_Exemplo/runtime.js#L168)
 
 Manipulação de loop:
 > A manipulação de loop ocorre em toda ACE, ação, condição e expressão.
@@ -94,15 +94,15 @@ Manipulação de loop:
 A condição irá pegar uma quantia de vezes que deverá acionar as ações no mesmo tick.
 - Esta quantia para este exemplo pode ser visivel na [*linha 98 da edittime.js*](/SDK_Exemplo/edittime.js#L98)
 - A condição em si, esta localizada na [*linha 99 da edittime.js*](/SDK_Exemplo/edittime.js#L99). note que a flag usada se chama **cf_looping**.
-- Agora na [*linha 195 da runtime.js*](/SDK_Exemplo/runtime.js#L195) se encontra toda a estrutura do loop com pausas de eventos e comentarios.
+- Agora na [*linha 202 da runtime.js*](/SDK_Exemplo/runtime.js#L202) se encontra toda a estrutura do loop com pausas de eventos e comentarios.
 
 A ação da qual um loop precisa é a de para-lo, pois, nem sempre queremos um loop que percorra até o final.
 - Na [*linha 68 da edititime.js*](/SDK_Exemplo/edittime.js#L68) se encontra a ação de parar o loop independente de seu tick.
-- Já seu metodo se encontra na [*linha 139 da runtime.js*](/SDK_Exemplo/runtime.js#L139), sem nenhum mistério ou novidade.
+- Já seu metodo se encontra na [*linha 146 da runtime.js*](/SDK_Exemplo/runtime.js#L146), sem nenhum mistério ou novidade.
 
 Por último temos a expressão que retorna em qual index o loop se encontra.
 - Sem nenhum parâmetro ou flags próprias a expressão se encontra na [*linha 125 da edittime.js*](/SDK_Exemplo/edittime.js#L125)
-- Seu metodo, também simples, se encontra na [*linha 276 da runtime.js*](/SDK_Exemplo/runtime.js#L276), deixando claro que qualquer expressão deve retornar dentro da função **ret**, que é um parâmetro obrigatório em todas as expressões.
+- Seu metodo, também simples, se encontra na [*linha 283 da runtime.js*](/SDK_Exemplo/runtime.js#L283), deixando claro que qualquer expressão deve retornar dentro da função **ret**, que é um parâmetro obrigatório em todas as expressões.
 
 Outros exemplos você pode observar dentro na pasta [*SDK_Exemplo*](/SDK_Exemplo)
 
