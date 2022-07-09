@@ -15,11 +15,39 @@ Desenvolvi esta SDK com o intuito de facilitar o meu desenvolvimento em relaçã
 - No arquivo [*edittime.js*](/SDK_Exemplo/edittime.js#L2), Altere **GetPluginSettings** por **GetBehaviorSettings**.
 - Mantenha o [*type*](/SDK_Exemplo/edittime.js#L11) com o valor **'object'**, para evitar bugs.
 - Evite [*flags*](/SDK_Exemplo/edittime.js#L13) com modificações graficas.
-- Altere **cr.plugins_** para **cr.behaviors** nas linhas [**33**](/SDK_Exemplo/runtime.js#L33) e [**43**](/SDK_Exemplo/runtime.js#L43).
 - Na [*linha 148 da edittime.js*](/SDK_Exemplo/edittime.js#L148) altere **CreateIDEObjectType** para **CreateIDEBehaviorType**.
-- Agora na *runtime.js*, subititua todas as palavras *plugin* por *behavior*.
-- Procure pela class **Instance** e adicione o metodo **tick()** (um exemplo comentadno na [*linha 73 da runtime.js*](/SDK_Exemplo/runtime.js#L73)).
-- E por fim altere **IDEObjectType** por **IDEBehaviorType** na [*linha 149*](/SDK_Exemplo/edittime.js#L149) e [*152 da edittime.js*](/SDK_Exemplo/edittime.js#L152)
+- Finalizando a edittime, altere **IDEObjectType** por **IDEBehaviorType** na [*linha 149*](/SDK_Exemplo/edittime.js#L149) e [*152 da edittime.js*](/SDK_Exemplo/edittime.js#L152)
+
+- A edição na runtime será trocar de **cr.plugins_** para **cr.behaviors** nas linhas [**33**](/SDK_Exemplo/runtime.js#L33) e [**43**](/SDK_Exemplo/runtime.js#L43).
+- Busque na runtime qualquer referência com a palavra plugin e a substitua por behavior.
+- Edite a class **type**, colocando o parametro o **objtype** na constructor e tribundo a this:
+```js
+class Type {
+		constructor(behavior, objtype) {
+			this.behavior = behavior
+			this.runtime = behavior.runtime
+			this.objtype = objtype
+		}
+...
+```
+
+- Também edite a class **Instance** e adicione o metodo **tick()** (um exemplo comentadno na [*linha 73 da runtime.js*](/SDK_Exemplo/runtime.js#L73)) e sua crontrutor inserindo o prametro inst, atribuindo a this, alem de atribuir a type do behavior.
+```js
+class Instance {
+		constructor(type, inst) {
+			this.type = type
+			this.behavior = type.behavior
+			this.inst = inst
+			this.runtime = type.runtime
+		}
+
+		tick() {
+			//
+		}
+		...
+```
+
+
 
 ### Primeiros passos:
 > Você primeiro deve informar a engine, as configurações do seu plugin, para isso você irá configurar a [edittime.js](/SDK_Exemplo/edittime.js)
