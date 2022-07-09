@@ -153,6 +153,17 @@
 			this.numeroExemplo = number
 		}
 
+		mudarAngulo(objeto, angulo) {
+			const sol = objeto.getCurrentSol() //separa todas as instancias do objeto selecionado.
+			const instances = sol.select_all ? sol.type.instances : sol.instances //seleciona todas as copias da instancia que são existentes.
+			const [inst] = instances //pega a primeira instancia criada.
+
+			console.log(instances)
+
+			inst.angulo = cr.to_radians(angulo) //tive de usar o metodo "to radians" para que o valor inserido no parametro será convertido na forma correta do angulo.
+			inst.set_bbox_changed() //a função "set bbox changed" é usada para levar as alterações da instancia ao canvas.
+		}
+
 /*
 		exampleName(parametros, parametros, parametros, ...parametros) {
 			//Qualquer ação, condição ou expressão pode usar este codigo, mas achei viavel colocar em ações.
@@ -288,17 +299,6 @@
 		getNumeberExample(ret) {
 			//Retorna o valor da variavel que representa a propriedade "Numero de exemplo".
 			ret.set_int(this.numeroExemplo)
-		}
-		
-		mudarAngulo(objeto, angulo) {
-			const sol = objeto.getCurrentSol() //separa todas as instancias do objeto selecionado.
-			const instances = sol.select_all ? sol.type.instances : sol.instances //seleciona todas as copias da instancia que são existentes.
-			const [inst] = instances //pega a primeira instancia criada.
-
-			console.log(instances)
-
-			inst.angulo = cr.to_radians(angulo) //tive de usar o metodo "to radians" para que o valor inserido no parametro será convertido na forma correta do angulo.
-			inst.set_bbox_changed() //a função "set bbox changed" é usada para levar as alterações da instancia ao canvas.
 		}
 
 /*
