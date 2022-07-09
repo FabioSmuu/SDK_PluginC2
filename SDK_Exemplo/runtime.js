@@ -2,16 +2,16 @@
 
 /*
 
-	- Caso queira criar behavior, procure por cr.plugins_ e troque por cr.behaviors_
+    - Caso queira criar behavior, procure por cr.plugins_ e troque por cr.behaviors_
 
-	- Procure por 'NomeInternoNaRuntime' para inserir alterar o id do plugin para o mesmo configurado na edittime.
+    - Procure por 'NomeInternoNaRuntime' para inserir alterar o id do plugin para o mesmo configurado na edittime.
 
-	- O uso de this esta bem visivel.
-	Dentro da class Type, a this retornará os metodos e variaveis da class Type.
-	Já a class Instance e as const Actions, Conditions e Expressions mdua this para a class Instance.
-	Você pode facilmente criar uma variavel de instancia global em qualquer um destes campos.
+    - O uso de this esta bem visivel.
+    Dentro da class Type, a this retornará os metodos e variaveis da class Type.
+    Já a class Instance e as const Actions, Conditions e Expressions mdua this para a class Instance.
+    Você pode facilmente criar uma variavel de instancia global em qualquer um destes campos.
 
-	- A linha: this.runtime.trigger(Conditions.cndsExampleName, this)
+    - A linha: this.runtime.trigger(Conditions.cndsExampleName, this)
     pode ser ser usado em qualquer campo do plugin.
 
     - Para pegar as propriedades criadas na edittime, use this.properties[index]
@@ -148,19 +148,19 @@
 			this.stoopLoop = true
 		}
 
-		sertNumberExample(number) {
+		setNumberExample(number) {
 			//Muda o valor da variavel que representa a propriedade "Numero de exemplo"
 			this.numeroExemplo = number
 		}
 
-		mudarAngulo(objeto, angulo) {
-			const sol = objeto.getCurrentSol() //separa todas as instancias do objeto selecionado.
+		setAngle(object, angle) {
+			const sol = object.getCurrentSol() //separa todas as instancias do objeto selecionado.
 			const instances = sol.select_all ? sol.type.instances : sol.instances //seleciona todas as copias da instancia que são existentes.
 			const [inst] = instances //pega a primeira instancia criada.
 
 			console.log(instances)
 
-			inst.angulo = cr.to_radians(angulo) //tive de usar o metodo "to radians" para que o valor inserido no parametro será convertido na forma correta do angulo.
+			inst.angle = cr.to_radians(angle) //tive de usar o metodo "to radians" para que o valor inserido no parametro será convertido na forma correta do angulo.
 			inst.set_bbox_changed() //a função "set bbox changed" é usada para levar as alterações da instancia ao canvas.
 		}
 
