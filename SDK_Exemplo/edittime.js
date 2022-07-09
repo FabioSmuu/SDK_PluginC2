@@ -70,6 +70,10 @@ AddAction(2, af_none, 'Parar loop', 'Extra', 'Para o loop', 'Pare o loop no meio
 AddNumberParam('Novo valor', 'Escolha um novo valor para a propriedade "Numero de exemplo"', 7)	
 AddAction(3, af_none, 'Mudar valor da prorpiedade', 'Exemplo de prorpiedade', '<i>"Numero de exemplo"</i> = <b>{0}</b>', 'Exemplo de como mudar o valor de uma propriedade usando ação.', 'sertNumberExample')
 
+AddObjectParam('Objeto', 'Selecione um objeto de exemplo')
+AddNumberParam('Novo angulo', 'Insira um angulo para testar', 90)	
+AddAction(4, af_none, 'Mudança de angulo', 'Sol', 'Mudar angulo do objeto {0} para {1}', 'Exemplo de alteração em objeto sol', 'mudarAngulo')
+
 ////////////////////////////////////////
 // Conditions
 
