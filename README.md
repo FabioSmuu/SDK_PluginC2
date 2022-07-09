@@ -32,7 +32,7 @@ class Type {
 ...
 ```
 
-- Também edite a class **Instance** e adicione o metodo **tick()** (um exemplo comentadno na [*linha 73 da runtime.js*](/SDK_Exemplo/runtime.js#L73)) e sua crontrutor inserindo o prametro inst, atribuindo a this, alem de atribuir a type do behavior.
+- Também edite a class **Instance** e adicione o metodo **tick()** (um exemplo comentadno na [*linha 78 da runtime.js*](/SDK_Exemplo/runtime.js#L78)) e sua crontrutor inserindo o prametro inst, atribuindo a this, alem de atribuir a type do behavior.
 ```js
 class Instance {
 		constructor(type, inst) {
