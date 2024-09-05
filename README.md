@@ -1,7 +1,5 @@
 # Respositorio de arquivos para o desenvolvimento de um plugin para a game engine [Construct 2](https://www.construct.net/en/construct-2/download).
 
-[![N|Solid](https://cdn.discordapp.com/attachments/631607183301148672/724397007170568313/paypal.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=fabinhoec2210@gmail.com&item_name=F%C3%A1bio&currency_code=BRL)  [![N|Solid](https://cdn.discordapp.com/attachments/631607183301148672/724397005543178270/picpay.png)](https://app.picpay.com/user/smuu)
-
 Desenvolvi esta SDK com o intuito de facilitar o meu desenvolvimento em relação a plugin e como quase que diariamente me perguntam como desenvolvo, resolvi deixar uma base atualizada com algumas explicações, para que ajude estas pessoas a iniciar um addon próprio.
 
 ### Informações básicas:
