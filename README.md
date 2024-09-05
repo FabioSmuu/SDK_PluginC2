@@ -1,4 +1,4 @@
-# Respositorio de arquivos para o desenvolvimento de um plugin para a game engine [Construct 2](https://www.construct.net/en/construct-2/download).
+# Modelo de Plugin - SDk para a game engine [Construct 2](https://www.construct.net/en/construct-2/download).
 
 Desenvolvi esta SDK com o intuito de facilitar o meu desenvolvimento em relação a plugin e como quase que diariamente me perguntam como desenvolvo, resolvi deixar uma base atualizada com algumas explicações, para que ajude estas pessoas a iniciar um addon próprio.
 
